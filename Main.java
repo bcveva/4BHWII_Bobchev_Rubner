@@ -1,13 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        PrinterProxy proxy = new PrinterProxy();
+        Pizzeria berlinPizzeria = new BerlinPizzeria();
+        Pizzeria hamburgPizzeria = new HamburgPizzeria();
+        Pizzeria rostockPizzeria = new RostcokPizzeria();
 
-        proxy.print(503);
-        proxy.print(-10);
-        proxy.print(80);
-        proxy.print(5);
-        proxy.print(20, PrinterType.SW);
-        proxy.print(55, PrinterType.COLOR);
+        Pizza salamiPizza = berlinPizzeria.bestellen("Salami");
+        Pizza hawaiiPizza = hamburgPizzeria.bestellen("Hawaii");
+        Pizza calzonePizza = rostockPizzeria.bestellen("Calzone");
+
+        salamiPizza.backen();
+        salamiPizza.schneiden();
+        salamiPizza.einpacken();
+
+        hawaiiPizza.backen();
+        hawaiiPizza.schneiden();
+        hawaiiPizza.einpacken();
+
+        calzonePizza.backen();
+        calzonePizza.schneiden();
+        calzonePizza.einpacken();
     }
 }
-
